@@ -80,6 +80,11 @@ public class SchedulerService {
      */
     @Scheduled(fixedDelayString = "${scheduler.fix.delay}")
     public void fixedDelayStringParameterTask() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("07 Fixed Delay String Parameter 5 seconds " + getCurrentThread() + getSecond());
     }
 
